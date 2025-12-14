@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="lv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/laosanspro.css">
+  <title>TimePlan — Kalendārs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">TimePlan</a>
+    <nav class="main-nav" aria-label="Galvenā navigācija">
+      <a href="index.html" class="">Sākums</a>
+      <a href="tasks.html" class="">Uzdevumi</a>
+      <a href="calendar.html" class="active">Kalendārs</a>
+      <a href="statistics.html" class="">Statistika</a>
+      <a href="about.html" class="">Par mums</a>
+    </nav>
+    <div class="header-actions">
+      <span id="userBadge" class="user-badge" style="display:none"></span>
+      <a id="loginLink" class="link-btn" href="login.html" style="display:none">Pieteikties</a>
+      <a id="registerLink" class="link-btn" href="register.html" style="display:none">Reģistrēties</a>
+      <button id="logoutBtn" class="btn small" type="button" style="display:none">Iziet</button>
+      <button id="themeToggle" aria-pressed="false" title="Pārslēgt tēmu" type="button">Tēma</button>
+      <button class="burger" aria-label="Atvērt navigāciju" type="button">☰</button>
+    </div>
+  </div>
+</header>
+<main class="container">
+  <h1>Kalendārs</h1>
+  <section class="calendar">
+    <div class="calendar-toolbar">
+      <button class="btn small" id="calPrev" type="button">Iepr.</button>
+      <div class="month" id="calMonthLabel" aria-live="polite"></div>
+      <button class="btn small" id="calNext" type="button">Nāk.</button>
+    </div>
+
+    <div class="calendar-grid">
+      <aside class="card">
+        <h3 id="selectedDateTitle">Izvēlies datumu</h3>
+        <p class="muted small" id="selectedDateMeta"></p>
+        <ul class="due-list" id="dueList" aria-live="polite"></ul>
+        <div class="muted small" id="dueEmpty" style="display:none">Šajā datumā nav uzdevumu.</div>
+      </aside>
+
+      <div>
+        <div class="card" style="padding:0.6rem">
+          <div id="calendarGrid" aria-label="Mēneša kalendārs"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container"><p>&copy; <span id="year2"></span> TimePlan — Visas tiesības aizsargātas.</p></div>
+</footer>
+<script src="js/app.js"></script>
+</body>
+</html>

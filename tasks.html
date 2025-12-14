@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="lv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/laosanspro.css">
+  <title>TimePlan — Uzdevumi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">TimePlan</a>
+    <nav class="main-nav" aria-label="Galvenā navigācija">
+      <a href="index.html" class="">Sākums</a>
+      <a href="tasks.html" class="active">Uzdevumi</a>
+      <a href="calendar.html" class="">Kalendārs</a>
+      <a href="statistics.html" class="">Statistika</a>
+      <a href="about.html" class="">Par mums</a>
+    </nav>
+    <div class="header-actions">
+      <span id="userBadge" class="user-badge" style="display:none"></span>
+      <a id="loginLink" class="link-btn" href="login.html" style="display:none">Pieteikties</a>
+      <a id="registerLink" class="link-btn" href="register.html" style="display:none">Reģistrēties</a>
+      <button id="logoutBtn" class="btn small" type="button" style="display:none">Iziet</button>
+      <button id="themeToggle" aria-pressed="false" title="Pārslēgt tēmu" type="button">Tēma</button>
+      <button class="burger" aria-label="Atvērt navigāciju" type="button">☰</button>
+    </div>
+  </div>
+</header>
+<main class="container">
+  <h1>Uzdevumi</h1>
+  <section class="task-app">
+    <form id="taskForm" class="task-form" aria-label="Pievienot uzdevumu">
+      <input type="text" id="taskTitle" placeholder="Uzdevuma nosaukums" required>
+      <input type="text" id="taskSubject" placeholder="Priekšmets (piem. Matemātika)" required>
+      <input type="date" id="taskDate">
+      <select id="taskPriority">
+        <option value="low">Zema</option>
+        <option value="medium" selected>Vidēja</option>
+        <option value="high">Augsta</option>
+      </select>
+      <button class="btn" type="submit">Pievienot</button>
+      <p class="muted small" id="authHint" style="display:none"></p>
+    </form>
+
+    <div class="task-overview">
+      <div class="progress">
+        <label>Progress</label>
+        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"><div class="progress-fill" style="width:0%"></div></div>
+        <p id="progressText">0% pabeigts</p>
+        <p class="motivation" id="weekMessage" style="display:none"></p>
+      </div>
+
+      <div class="card filters">
+        <h3>Ātrā meklēšana un filtri</h3>
+        <div class="filters-grid">
+          <input id="searchInput" type="text" placeholder="Meklēt pēc nosaukuma">
+          <select id="subjectFilter"><option value="">Visi priekšmeti</option></select>
+          <select id="dueFilter">
+            <option value="all">Visi termiņi</option>
+            <option value="overdue">Nokavēti</option>
+            <option value="today">Šodien</option>
+            <option value="next7">Nākamās 7 dienas</option>
+            <option value="nodate">Bez datuma</option>
+          </select>
+          <button class="btn small" id="clearFilters" type="button">Notīrīt</button>
+        </div>
+      </div>
+
+      <ul id="taskList" class="task-list" aria-live="polite"></ul>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container"><p>&copy; <span id="year2"></span> TimePlan — Visas tiesības aizsargātas.</p></div>
+</footer>
+<script src="js/app.js"></script>
+</body>
+</html>

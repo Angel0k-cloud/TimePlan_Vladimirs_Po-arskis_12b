@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="lv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/laosanspro.css">
+  <title>TimePlan — Statistika</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">TimePlan</a>
+    <nav class="main-nav" aria-label="Galvenā navigācija">
+      <a href="index.html" class="">Sākums</a>
+      <a href="tasks.html" class="">Uzdevumi</a>
+      <a href="calendar.html" class="">Kalendārs</a>
+      <a href="statistics.html" class="active">Statistika</a>
+      <a href="about.html" class="">Par mums</a>
+    </nav>
+    <div class="header-actions">
+      <span id="userBadge" class="user-badge" style="display:none"></span>
+      <a id="loginLink" class="link-btn" href="login.html" style="display:none">Pieteikties</a>
+      <a id="registerLink" class="link-btn" href="register.html" style="display:none">Reģistrēties</a>
+      <button id="logoutBtn" class="btn small" type="button" style="display:none">Iziet</button>
+      <button id="themeToggle" aria-pressed="false" title="Pārslēgt tēmu" type="button">Tēma</button>
+      <button class="burger" aria-label="Atvērt navigāciju" type="button">☰</button>
+    </div>
+  </div>
+</header>
+<main class="container">
+  <h1>Statistika</h1>
+  <section class="stats">
+    <div class="stat-cards">
+      <div class="stat-card"><h3 id="doneCount">0</h3><p>Pabeigti uzdevumi</p></div>
+      <div class="stat-card"><h3 id="totalCount">0</h3><p>Kopā uzdevumi</p></div>
+      <div class="stat-card"><h3 id="completionRate">0%</h3><p>Izpildes procents</p></div>
+    </div>
+
+    <div class="stat-cards" style="margin-top:1rem">
+      <div class="stat-card"><h3 id="overdueCount">0</h3><p>Nokavēti (nav pabeigti)</p></div>
+      <div class="stat-card"><h3 id="upcoming7Count">0</h3><p>Nākamās 7 dienas</p></div>
+      <div class="stat-card"><h3 id="withDateCount">0</h3><p>Ar termiņu</p></div>
+    </div>
+
+    <div class="card" style="margin-top:1rem">
+      <h3>Prioritāšu sadalījums</h3>
+      <div class="bars">
+        <div class="bar-row">
+          <span class="bar-label">Augsta</span>
+          <div class="bar-track"><div class="bar-fill" id="barHigh"></div></div>
+          <span class="bar-value" id="barHighVal">0</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Vidēja</span>
+          <div class="bar-track"><div class="bar-fill" id="barMed"></div></div>
+          <span class="bar-value" id="barMedVal">0</span>
+        </div>
+        <div class="bar-row">
+          <span class="bar-label">Zema</span>
+          <div class="bar-track"><div class="bar-fill" id="barLow"></div></div>
+          <span class="bar-value" id="barLowVal">0</span>
+        </div>
+      </div>
+      <p class="muted small" id="statsHint"></p>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="container"><p>&copy; <span id="year2"></span> TimePlan — Visas tiesības aizsargātas.</p></div>
+</footer>
+<script src="js/app.js"></script>
+</body>
+</html>
